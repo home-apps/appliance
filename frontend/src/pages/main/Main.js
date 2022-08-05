@@ -9,6 +9,12 @@ import washing from '../../icons/washing.png'
 import recycle from '../../icons/recycle.png'
 import donate from '../../icons/donate.png'
 import arrow from '../../icons/arrow.png'
+import workflow from '../../icons/workflow.png'
+import highRisk from '../../icons/highRisk.png'
+import cloudAccess from '../../icons/cloudAccess.png'
+import quotes from '../../icons/quotes.png'
+import support from '../../icons/support.png'
+import manual from '../../icons/manual.png'
 
 import './main.css'
 
@@ -176,11 +182,38 @@ const Main = () => {
               </div>
               {foldedContent.includes('manuals') && (
                 <div className='mainMenuFoldedContent'>
-                  {product.TechSpecs.map((item, index) => (
-                    <div className='mainMenuFoldedContentItem' key={index}>
-                      {item}
+                  <div className='mainMenuBuyContainer'>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={manual} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>manuals</div>
                     </div>
-                  ))}
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={manual} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>explainers</div>
+                    </div>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={manual} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>receipts</div>
+                    </div>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={manual} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>warranty</div>
+                    </div>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={manual} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>QR code</div>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -213,11 +246,38 @@ const Main = () => {
               </div>
               {foldedContent.includes('issues') && (
                 <div className='mainMenuFoldedContent'>
-                  {product.TechSpecs.map((item, index) => (
-                    <div className='mainMenuFoldedContentItem' key={index}>
-                      {item}
+                  <div className='mainMenuBuyContainer'>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={highRisk} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>error codes</div>
                     </div>
-                  ))}
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={workflow} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>troubleshooting</div>
+                    </div>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={cloudAccess} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>diagnostics</div>
+                    </div>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={quotes} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>repair quotes</div>
+                    </div>
+                    <div className='mainMenuBuyItem'>
+                      <div className='mainMenuBuyItemIcon'>
+                        <img src={support} alt='' />
+                      </div>
+                      <div className='mainMenuBuyItemText'>support contact</div>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
