@@ -1,0 +1,63 @@
+.SlideLeftAnimation {
+     opacity: 1;
+     animation: slideLeft 0.8s ease-in-out forwards;
+}
+
+.SlideRightAnimation {
+     opacity: 1;
+     animation: slideRight 0.8s ease-in-out forwards;
+}
+
+.SlideUpAnimation {
+     opacity: 1;
+     animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.SlideDownAnimation {
+     opacity: 1;
+     animation: slideDown 0.8s ease-in-out forwards;
+}
+
+@keyframes slideLeft {
+     0% {
+          transform: translateX(-300px);
+          opacity: 0;
+     }
+     100% {
+          transform: translateX(0px);
+          opacity: 1;
+     }
+}
+
+@keyframes slideRight {
+     0% {
+          transform: translateX(300px);
+          opacity: 0;
+     }
+     100% {
+          transform: translateX(0px);
+          opacity: 1;
+     }
+}
+
+@keyframes slideUp {
+     0% {
+          transform: translateY(300px);
+          opacity: 0;
+     }
+     100% {
+          transform: translateY(0px);
+          opacity: 1;
+     }
+}
+
+@keyframes slideDown {
+     0% {
+          transform: translateY(-300px);
+          opacity: 0;
+     }
+     100% {
+          transform: translateY(0px);
+          opacity: 1;
+     }
+}

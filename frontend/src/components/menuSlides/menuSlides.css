@@ -1,0 +1,170 @@
+.MenuSlides {
+  height: 86px;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #cbd2e1;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 5px;
+  max-width: 1100px;
+  z-index: 999;
+  background-color: white;
+}
+
+.MenuSlidesLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+}
+
+.MenuSlidesRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+}
+
+.MenuSlidesIconLeft {
+  width: 63px;
+  height: 63px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #a2bdd2;
+  border-radius: 50%;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.MenuSlidesIconRight {
+  width: 63px;
+  height: 63px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #a2bdd2;
+  border-radius: 50%;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.MenuSlidesIconRightApp {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.MenuSlidesIconRightAppOpen {
+  width: 35px;
+  height: 35px;
+  margin-right: 13px;
+  margin-top: 2px;
+}
+
+.MenuSlidesIconLeftMenu {
+  width: 35px;
+  height: 35px;
+}
+.menuDropdown {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  background-color: #ffffff;
+  border: 1px solid #a2bdd2;
+  border-radius: 8px;
+  z-index: 99;
+  box-shadow: 6px 6px 18px #00000029;
+}
+
+.menuDropdownItem {
+  padding: 10px 30px 10px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #a2bdd2;
+}
+
+.menuDropdownItem:last-child {
+  border-bottom: none;
+}
+
+.menuDropdownIMG {
+  width: 25px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.menuDropdownItemText {
+  letter-spacing: 0.47px;
+  color: #202020;
+  font-weight: bold;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.menuDropdownTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #a2bdd2;
+}
+
+.menuDropdownTitleText {
+  padding: 19px 27px;
+  letter-spacing: 0.47px;
+  color: #212020;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.menuDropdownGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-height: 580px;
+  overflow-y: scroll;
+}
+
+.menuDropdownGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.menuDropdownGridItem {
+  padding: 25px 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menuDropdownGridItemIMG {
+  width: 45;
+  height: 45px;
+}
+
+.menuDropdownGridItemIcon {
+  box-shadow: 0px 2px 2px #2b8eff29;
+  border: 1px solid #a2bdd2;
+  background-color: #fcfdff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+}
+
+.menuDropdownGridItemText {
+  letter-spacing: 0.44px;
+  color: #202020;
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 5px;
+}

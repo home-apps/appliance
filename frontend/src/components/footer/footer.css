@@ -1,0 +1,200 @@
+.footerBC {
+     background-color: var(--color-navbar);
+}
+
+.footerMain {
+     display: flex;
+     padding-top: 75px;
+     padding-bottom: 100px;
+}
+
+.footerMainLeft {
+     flex: 35%;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: center;
+}
+
+.footerMainRight {
+     flex: 65%;
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+}
+
+.footerMainLeftLogo {
+     color: var(--color-text-main);
+     font-weight: 400;
+     font-size: 21px;
+     margin-bottom: 14px;
+}
+
+.footerMainLeftText {
+     color: var(--color-text-main);
+     font-weight: 400;
+     font-size: 20px;
+     opacity: 0.3;
+     margin-bottom: 25px;
+     text-align: center;
+}
+
+.footerMainLeftLinks {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 22px;
+     margin-bottom: 37px;
+}
+
+.footerMainLeftCopy {
+     color: var(--color-text-main);
+     font-weight: 600;
+     font-size: 20px;
+}
+
+/*RIGHT*/
+
+.footerMainRightItem {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: flex-start;
+}
+
+.footerMainRightItemTitle {
+     color: var(--color-text-main);
+     letter-spacing: 1.8px;
+     font-weight: 600;
+     font-size: 36px;
+     margin-bottom: 17px;
+}
+
+.footerIcon {
+     cursor: pointer;
+}
+
+.footerIcon:hover {
+     -webkit-transform: scale(1.05);
+     -moz-transform: scale(1.05);
+     -o-transform: scale(1.05);
+     transform: scale(1.05);
+}
+
+.footerIcon:active {
+     -webkit-transform: scale(1.08);
+     -moz-transform: scale(1.08);
+     -o-transform: scale(1.08);
+     transform: scale(1.08);
+}
+
+.footerMainRightItemText {
+     color: var(--color-text-main);
+     letter-spacing: 1.8px;
+     font-weight: 400;
+     font-size: 16px;
+     opacity: 0.3;
+     margin-bottom: 25px;
+     cursor: pointer;
+}
+
+.footerMainRightItemText:hover {
+     -webkit-transform: scale(1.05);
+     -moz-transform: scale(1.05);
+     -o-transform: scale(1.05);
+     transform: scale(1.05);
+     opacity: 0.5;
+}
+
+.footerMainRightItemText:active {
+     -webkit-transform: scale(1.08);
+     -moz-transform: scale(1.08);
+     -o-transform: scale(1.08);
+     transform: scale(1.08);
+     opacity: 0.8;
+}
+
+.footerMainLeftCopyMobile {
+     display: none;
+}
+
+@media only screen and (max-width: 1300px) {
+     .footerMain {
+          flex-direction: column;
+     }
+     .footerMainLeft {
+          align-items: center;
+          padding-bottom: 20px;
+     }
+     .footerMainLeftCopy {
+          display: none;
+     }
+     .footerMainRightItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+     }
+     .footerMainLeftCopyMobile {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          color: var(--color-text-main);
+          font-weight: 600;
+          font-size: 20px;
+          margin-top: 20px;
+          text-align: center;
+     }
+}
+
+@media only screen and (max-width: 900px) {
+     .footerMainRight {
+          grid-template-columns: repeat(2, 1fr);
+          grid-row-gap: 50px;
+     }
+}
+
+@media only screen and (max-width: 670px) {
+     .footerBC {
+          margin-top: 50px;
+     }
+     .footerMainRightItemTitle {
+          font-size: 26px;
+          margin-bottom: 5px;
+     }
+
+     .footerMainRightItemText {
+          margin-bottom: 10px;
+     }
+
+     .footerMainRight {
+          grid-row-gap: 15px;
+     }
+
+     .footerMainLeft {
+          padding-bottom: 0;
+     }
+
+     .footerMainLeftLinks {
+          margin-bottom: 15px;
+     }
+
+     .footerMainLeftText {
+          margin-bottom: 15px;
+     }
+
+     .footerMain {
+          padding-top: 50px;
+          padding-bottom: 50px;
+     }
+}
+
+@media only screen and (max-width: 550px) {
+     .footerMainRightItemTitle {
+          font-size: 22px;
+     }
+
+     .footerMainRightItemText {
+          font-size: 14px;
+     }
+}

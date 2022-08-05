@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "productName": "BOSCH WAU28PH9GB Series 6 Washer",
+    "images": [
+      "/images/BOSCH WAU28PH9GB Series 6 Washer b.png",
+      "/images/BOSCH WAU28PH9GB Series 6 Washer d.png",
+      "/images/BOSCH WAU28PH9GB Series 6 Washer p.png",
+      "/images/BOSCH WAU28PH9GB Series 6 Washer e.png",
+      "/images/BOSCH WAU28PH9GB Series 6 Washer a.png",
+      "/images/BOSCH WAU28PH9GB Series 6 Washer j.png"
+    ],
+    "Description": "With a 9kg capacity that’s ideal for medium-sized households, this Bosch washing machine is an excellent choice for busy families. Whether it’s dripped toothpaste down a school blazer or a dirty P.E. kit that’s been hiding in the lounge, the 15 and 30 minute quick wash programmes are sure to save any Monday morning headaches. This model has clever i-DOS™ technology too, and this automatically disperses the right amount of water and detergent needed for each load. You won’t need to fill it up every time you put a load on either, and you’ll get brilliant results without wasting energy. And if you’d rather not hear the motor rattling when you’re entertaining friends in the kitchen, you won’t have to, as the ecoSilence Drive is super-quiet.",
+    "TechSpecs": ["Key Information", "Childproof Lock: Yes", "Key Information", "Childproof Lock: Yes"],
+    "product": ["Spare Parts", "Accessories", "Laundry Supplies", "Furniture", "Tools"],
+    "services": ["Technicians", "Warranties", "Care Plans", "Insurance", "Diagnostics"],
+    "productImage": "/images/Detergent.png",
+    "serviceImage": "/images/technician.jpg"
+  }
+]
