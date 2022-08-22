@@ -54,6 +54,12 @@ body {
   margin: 0 50px;
 }
 
+.Box {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 5px;
+}
+
 @media only screen and (max-width: 670px) {
   .componentSecond {
     margin: 0 20px;

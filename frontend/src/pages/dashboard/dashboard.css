@@ -1,0 +1,343 @@
+.freeAccountContainer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  z-index: 10;
+
+  box-shadow: 0px 3px 6px #8bbeffc7;
+  border: 1px solid #a2bdd2;
+  border-radius: 12px;
+  border-top: none;
+  max-height: 70px;
+  background-color: #ffffff;
+  transition: max-height 1s;
+}
+
+.activeFreeAccount {
+  max-height: 500px;
+  transition: max-height 1s;
+}
+
+.freeAccount {
+  box-shadow: 0px 2px 2px #00000029;
+  border: 1px solid #a2bdd2;
+  border-radius: 12px;
+  background-color: #f5f8ff;
+  padding: 13px;
+}
+
+.freeAccountHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.freeAccountTitle {
+  letter-spacing: 0px;
+  color: #113e92;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.freeAccountProgress {
+  width: 100%;
+  height: 10px;
+  background-color: #ffffff;
+  border: 1px solid #94c1fb;
+  border-radius: 18px;
+  margin-top: 9px;
+  position: relative;
+}
+
+.freeAccountProgressInside {
+  position: absolute;
+  border-radius: 18px;
+  height: 100%;
+  left: 0;
+  background-color: #3e92ff;
+}
+
+.freeAccountContent {
+  padding: 13px;
+}
+
+.freeAccountContentHide {
+  opacity: 0;
+  padding: 13px;
+  transition: all 1s;
+}
+
+.freeAccountContentItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.freeAccountContentItemChromeStore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.freeAccountContentItemChromeStoreContainer {
+  border: 1px solid #a2bdd2;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 9px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.freeAccountContentItemChromeStoreText {
+  letter-spacing: 0px;
+  color: #3e92ff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.freeAccountContentItemChromeStoreIcon {
+  margin-left: 10px;
+}
+
+.freeAccountContentItemIcon {
+  border: 2px solid #a2bdd2;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.freeAccountContentItemIconActive {
+  width: 22px;
+  height: 22px;
+  background-color: #3e92ff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.freeAccountContentItemText {
+  letter-spacing: 0px;
+  color: #113e92;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.productHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.productHeaderLeft {
+  flex: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productHeaderRight {
+  flex: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.title {
+  margin: 9px 0;
+}
+
+.productHeaderTitle {
+  font-size: 26px;
+  font-weight: bold;
+  color: #425881;
+}
+
+.productHeaderBox {
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+  border-radius: 24px;
+  border: 1px solid #3e92ff;
+  margin-left: 20px;
+
+  letter-spacing: 0.47px;
+  color: #727272;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.box {
+  box-shadow: 0px 3px 6px #cfe4ff;
+  border: 1px solid #a2bdd2;
+  border-radius: 12px;
+  background-color: #fcfdff;
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.boxNoEffect {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #a2bdd2;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.boxGrid {
+  box-shadow: 0px 3px 6px #cfe4ff;
+  border: 1px solid #a2bdd2;
+  border-radius: 12px;
+  background-color: #fcfdff;
+  width: 100%;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.gridLine {
+  border-right: 1px solid #a2bdd2;
+}
+
+.gridLine:nth-child(6n) {
+  border-right: none;
+}
+
+.boxLeft {
+  flex: 50%;
+}
+
+.boxRight {
+  flex: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #136bde;
+  padding: 29px;
+
+  border-radius: 0 12px 12px 0;
+}
+
+.boxRightGrid {
+  flex: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.boxRightText {
+  letter-spacing: 0.76px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.boxItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 14px 0;
+}
+
+.boxRightNavBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxRightNavBoxItem {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #f5f8ff;
+  background-color: #f5f8ff;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.boxRightNavBoxItemActive {
+  background-color: #ffd60a;
+  border: 1px solid #ffd60a;
+}
+
+.boxItemIcon {
+  background-color: #ffffff;
+  border: 1px solid #3e92ff;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxItemText {
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.41px;
+  color: #666666;
+  margin-top: 2px;
+}
+
+.boxItemImage {
+  width: 36px;
+  height: 36px;
+}
+
+.boxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.colorBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: blue;
+  margin-top: 15px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.colorBoxTitle {
+  color: rgb(175, 175, 255);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.colorBoxText {
+  color: white;
+  font-size: 25px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #a2bdd2;
+  margin: 10px 0;
+}
+
+.footerTitle {
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  font-size: 30px;
+}
