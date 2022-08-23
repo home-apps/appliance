@@ -114,14 +114,28 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #a2bdd2;
+  padding: 10px 0;
 }
 
 .menuDropdownTitleText {
-  padding: 19px 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 27px;
+}
+
+.menuDropdownTitleTextButton {
   letter-spacing: 0.47px;
-  color: #212020;
-  font-weight: normal;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #3e92ff;
+}
+
+.menuDropdownTitleTextButtonLine {
+  height: 20px;
+  width: 1px;
+  margin: 0 10px;
+  background-color: #212020;
 }
 
 .menuDropdownGrid {

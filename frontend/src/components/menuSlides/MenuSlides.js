@@ -6,8 +6,26 @@ import favoriteStore from '../../icons/favoriteStore.png'
 import search from '../../icons/search.png'
 import account from '../../icons/account.png'
 import washingMachine from '../../icons/washing-machine.png'
+import appliances from '../../icons/appliances.png'
 import apps from '../../icons/apps.png'
 import repairs from '../../icons/repairs.png'
+import home from '../../icons/home.png'
+import userSettings from '../../icons/userSettings.png'
+import apps2 from '../../icons/apps2.png'
+import splitExchange from '../../icons/splitExchange.png'
+import sell from '../../icons/sell.png'
+import devices from '../../icons/devices.png'
+import cooker from '../../icons/cooker.png'
+import vacuum from '../../icons/vacuum.png'
+import oven from '../../icons/oven.png'
+import microwave from '../../icons/microwave.png'
+import fridges from '../../icons/fridges.png'
+import dishwasher from '../../icons/dishwasher.png'
+import radiator from '../../icons/radiator.png'
+import coffeemaker from '../../icons/coffeemaker.png'
+import hobs from '../../icons/hobs.png'
+import cookingPot from '../../icons/cookingPot.png'
+import breadmaker from '../../icons/breadmaker.png'
 
 import './menuSlides.css'
 
@@ -62,18 +80,18 @@ const MenuSlides = () => {
               {showMenuDropdown && (
                 <div className='menuDropdown'>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={home} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Home</div>
                   </div>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={appliances} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>My Washers</div>
                   </div>
                   <div className='menuDropdownItem'>
                     <img src={repairs} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Troubleshooting</div>
                   </div>
-                  <div className='menuDropdownItem'>
+                  <div className='menuDropdownItem red'>
                     <img src={washingMachine} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Technicians</div>
                   </div>
@@ -82,23 +100,23 @@ const MenuSlides = () => {
                     <div className='menuDropdownItemText'>Shop Products</div>
                   </div>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={sell} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Find Services</div>
                   </div>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={splitExchange} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Sell Yours</div>
                   </div>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={apps2} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Service Add-Ons</div>
                   </div>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={devices} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>All My Devices</div>
                   </div>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={apps} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Other Super Apps</div>
                   </div>
                   <div className='menuDropdownItem'>
@@ -106,10 +124,10 @@ const MenuSlides = () => {
                     <div className='menuDropdownItemText'>App Help</div>
                   </div>
                   <div className='menuDropdownItem'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                    <img src={userSettings} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Account</div>
                   </div>
-                  <div className='menuDropdownItem'>
+                  <div className='menuDropdownItem red'>
                     <img src={washingMachine} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>For Business</div>
                   </div>
@@ -117,7 +135,7 @@ const MenuSlides = () => {
               )}
             </div>
             <div className='MenuSlidesIconLeft'>
-              <img src={washingMachine} alt='' />
+              <img src={appliances} alt='' />
             </div>
             <div className='MenuSlidesIconLeft'>
               <img src={info} alt='' />
@@ -145,7 +163,11 @@ const MenuSlides = () => {
               {showMenuDropdown2 && (
                 <div className='menuDropdown' style={{ right: 0, left: 'auto' }}>
                   <div className='menuDropdownTitle'>
-                    <div className='menuDropdownTitleText'>TRY OTHER FREE APPS</div>
+                    <div className='menuDropdownTitleText'>
+                      <div className='menuDropdownTitleTextButton'>Sign In</div>
+                      <div className='menuDropdownTitleTextButtonLine' />
+                      <div className='menuDropdownTitleTextButton'>Sign Up</div>
+                    </div>
                     <div className='menuDropdownTitleIcon'>
                       <img src={apps} alt='' className='MenuSlidesIconRightAppOpen' />
                     </div>
@@ -153,29 +175,29 @@ const MenuSlides = () => {
                   <div className='menuDropdownGrid'>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={cooker} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>cookers</div>
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={oven} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>ovens</div>
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={microwave} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>microwaves</div>
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={fridges} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>fridges</div>
                     </div>
-                    <div className='menuDropdownGridItem'>
+                    <div className='menuDropdownGridItem red'>
                       <div className='menuDropdownGridItemIcon'>
                         <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
                       </div>
@@ -183,35 +205,35 @@ const MenuSlides = () => {
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={dishwasher} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>dishwashers</div>
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={hobs} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>hobs</div>
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={cookingPot} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>slowcookers</div>
                     </div>
-                    <div className='menuDropdownGridItem'>
+                    <div className='menuDropdownGridItem red'>
                       <div className='menuDropdownGridItemIcon'>
                         <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>airfryers</div>
                     </div>
-                    <div className='menuDropdownGridItem'>
+                    <div className='menuDropdownGridItem red'>
                       <div className='menuDropdownGridItemIcon'>
                         <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>boilers</div>
                     </div>
-                    <div className='menuDropdownGridItem'>
+                    <div className='menuDropdownGridItem red'>
                       <div className='menuDropdownGridItemIcon'>
                         <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
                       </div>
@@ -219,17 +241,17 @@ const MenuSlides = () => {
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={radiator} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>radiators</div>
                     </div>
-                    <div className='menuDropdownGridItem'>
+                    <div className='menuDropdownGridItem red'>
                       <div className='menuDropdownGridItemIcon'>
                         <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>washer</div>
                     </div>
-                    <div className='menuDropdownGridItem'>
+                    <div className='menuDropdownGridItem red'>
                       <div className='menuDropdownGridItemIcon'>
                         <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
                       </div>
@@ -237,23 +259,23 @@ const MenuSlides = () => {
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={vacuum} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>vacuums</div>
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={breadmaker} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>breadmaker</div>
                     </div>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>
-                        <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
+                        <img src={coffeemaker} alt='' className='menuDropdownGridItemIMG' />
                       </div>
                       <div className='menuDropdownGridItemText'>coffeemaker</div>
                     </div>
-                    <div className='menuDropdownGridItem'>
+                    <div className='menuDropdownGridItem red'>
                       <div className='menuDropdownGridItemIcon'>
                         <img src={washingMachine} alt='' className='menuDropdownGridItemIMG' />
                       </div>

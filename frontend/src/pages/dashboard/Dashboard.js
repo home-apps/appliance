@@ -1,11 +1,44 @@
 import React, { useEffect, useState } from 'react'
 
+import products from '../../data/product.json'
+
 import manual from '../../icons/manual2.png'
+import techSpecs from '../../icons/techSpecs.png'
+import support from '../../icons/support.png'
+import favoriteStore from '../../icons/favoriteStore.png'
+import service from '../../icons/service.png'
+import bookmark from '../../icons/bookmark.png'
+import qrCode from '../../icons/qrCode.png'
+import share from '../../icons/share.png'
+import resell from '../../icons/resell.png'
+import recycleWhite from '../../icons/recycleWhite.png'
+import donateWhite from '../../icons/donateWhite.png'
+import favoriteCart from '../../icons/favoriteCart.png'
+import rentWhite from '../../icons/rentWhite.png'
+import financingWhite from '../../icons/financingWhite.png'
+import oven from '../../icons/oven.png'
+import devices from '../../icons/devices.png'
+import fridges from '../../icons/fridges.png'
+import cooker from '../../icons/cooker.png'
+import vacuum from '../../icons/vacuum.png'
+import air from '../../icons/air.png'
+import microwave from '../../icons/microwave.png'
+import tv from '../../icons/tv.png'
+import coffeemaker from '../../icons/coffeemaker.png'
+import light from '../../icons/light.png'
+import dishwasher from '../../icons/dishwasher.png'
+import radiator from '../../icons/radiator.png'
+import hobs from '../../icons/hobs.png'
+import washing from '../../icons/washing.png'
+import adapters from '../../icons/adapters.png'
+import mowers from '../../icons/mowers.png'
 
 import './dashboard.css'
 
 const Product = () => {
-  const [freeAccountShow, setFreeAccountShow] = useState(true)
+  const product = products[0]
+
+  const [freeAccountShow, setFreeAccountShow] = useState(false)
   const [progressBarValue, setProgressBarValue] = useState(40)
 
   //SET progress bar value
@@ -84,17 +117,17 @@ const Product = () => {
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={techSpecs} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>tech specs</div>
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={support} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>support</div>
               </div>
-              <div className='boxItem'>
+              <div className='boxItem red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
@@ -102,20 +135,24 @@ const Product = () => {
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={favoriteStore} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>products</div>
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={service} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>services</div>
               </div>
             </div>
 
             <div className='box'>
-              <div className='boxLeft'></div>
+              <div className='boxLeft'>
+                {product.images.map((item, index) => (
+                  <img src={item} alt='' key={index} className='boxLeftIMG' />
+                ))}
+              </div>
               <div className='boxRight'>
                 <div className='boxRightText'>ALL IN ONE</div>
                 <div className='boxRightText'>EASY TO USE</div>
@@ -135,37 +172,37 @@ const Product = () => {
               <div className='boxNoEffect'>
                 <div className='boxItem'>
                   <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                    <img src={bookmark} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>save model</div>
                 </div>
                 <div className='boxItem'>
                   <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                    <img src={qrCode} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>QR code</div>
                 </div>
                 <div className='boxItem'>
                   <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                    <img src={share} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>share</div>
                 </div>
               </div>
               <div className='boxNoEffect'>
-                <div className='boxItem'>
+                <div className='boxItem red'>
                   <div className='boxItemIcon'>
                     <img src={manual} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>error codes</div>
                 </div>
-                <div className='boxItem'>
+                <div className='boxItem red'>
                   <div className='boxItemIcon'>
                     <img src={manual} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>troubleshooting</div>
                 </div>
-                <div className='boxItem'>
+                <div className='boxItem red'>
                   <div className='boxItemIcon'>
                     <img src={manual} alt='' className='boxItemImage' />
                   </div>
@@ -182,38 +219,38 @@ const Product = () => {
 
             <div className='boxNoEffect'>
               <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItemIcon' style={{ backgroundColor: '#9D80FE', borderColor: '#9474FF' }}>
+                  <img src={resell} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>resell</div>
               </div>
               <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItemIcon' style={{ backgroundColor: '#34C85A', borderColor: '#34C85A' }}>
+                  <img src={recycleWhite} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>recycle</div>
               </div>
               <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItemIcon' style={{ backgroundColor: '#FFD60A', borderColor: '#FFD60A' }}>
+                  <img src={donateWhite} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>repurpose</div>
               </div>
               <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItemIcon' style={{ backgroundColor: '#3E92FF', borderColor: '#3E92FF' }}>
+                  <img src={favoriteCart} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>replace</div>
               </div>
               <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItemIcon' style={{ backgroundColor: '#FC8A4F', borderColor: '#FF6617' }}>
+                  <img src={rentWhite} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>rent</div>
               </div>
               <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItemIcon' style={{ backgroundColor: '#113E92', borderColor: '#113E92' }}>
+                  <img src={financingWhite} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>financing</div>
               </div>
@@ -226,41 +263,41 @@ const Product = () => {
             <div className='boxGrid'>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon '>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={oven} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>ovens</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={devices} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>mobiles</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={fridges} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>fridges</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={cooker} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>cookers</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={adapters} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>adapters</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={vacuum} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>vacuums</div>
               </div>
-              <div className='boxItem gridLine'>
+              <div className='boxItem gridLine red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
@@ -268,35 +305,35 @@ const Product = () => {
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={air} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>air purifiers</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={microwave} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>microwaves</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={mowers} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>mowers</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={washing} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>dryers</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={tv} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>televisions</div>
               </div>
-              <div className='boxItem gridLine'>
+              <div className='boxItem gridLine red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
@@ -304,31 +341,31 @@ const Product = () => {
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={coffeemaker} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>coffemakers</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={light} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>lightbulbs</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={dishwasher} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>dishwashers</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={hobs} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>hobs</div>
               </div>
               <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={radiator} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>radiators</div>
               </div>

@@ -217,6 +217,16 @@
 
 .boxLeft {
   flex: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 1px solid #a2bdd2;
+}
+
+.boxLeftIMG {
+  padding: 11px 50px 9px;
+  height: 280px;
 }
 
 .boxRight {
@@ -311,21 +321,26 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: blue;
+  background-color: #113e92;
   margin-top: 15px;
   padding: 10px 0;
   margin-bottom: 10px;
+
+  border: 1px solid #3e92ff;
+  border-radius: 12px;
 }
 
 .colorBoxTitle {
-  color: rgb(175, 175, 255);
-  font-size: 35px;
+  letter-spacing: 0.89px;
+  color: #5ba2fe;
+  font-size: 34px;
   font-weight: bold;
 }
 
 .colorBoxText {
   color: white;
-  font-size: 25px;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .line {
@@ -336,8 +351,11 @@
 }
 
 .footerTitle {
-  font-weight: bold;
+  font-weight: 500;
   text-align: left;
   width: 100%;
-  font-size: 30px;
+  font-size: 22px;
+
+  letter-spacing: 0px;
+  color: #555657;
 }
