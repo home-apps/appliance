@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "textOne": "ALL IN ONE",
+    "textTwo": "EASY TO USE",
+    "textThree": "FREE APPLIANCE TOOLS",
+    "color": "#136bde"
+  },
+  {
+    "id": 2,
+    "textOne": "A HOME ASSISTANT",
+    "textTwo": "THAT WORKS FOR YOU",
+    "textThree": "AT HOME & ON THE GO",
+    "color": "#F88448"
+  },
+  {
+    "id": 3,
+    "textOne": "IMPORTANT REMINDERS",
+    "textTwo": "FOR MAINTENANCE",
+    "textThree": "WARRANTY EXPIRATION",
+    "color": "#9578F8"
+  },
+  {
+    "id": 4,
+    "textOne": "FIND, COMPARE & BUY",
+    "textTwo": "BUT ALSO REPAIR, RENT,",
+    "textThree": "SELL, RECYCLE OR DONATE",
+    "color": "#21B848"
+  },
+  {
+    "id": 5,
+    "textOne": "FIND MANUALS",
+    "textTwo": "TROUBLESHOOTING",
+    "textThree": "AND REPAIR SERVICES",
+    "color": "#425881"
+  }
+]

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import products from '../../data/product.json'
+import adsList from '../../data/ads.json'
 
 import manual from '../../icons/manual2.png'
 import techSpecs from '../../icons/techSpecs.png'
@@ -41,10 +42,28 @@ const Product = () => {
   const [freeAccountShow, setFreeAccountShow] = useState(false)
   const [progressBarValue, setProgressBarValue] = useState(40)
 
+  const [activeAds, setActiveAds] = useState(0)
+
+  const ads = adsList[activeAds]
+
   //SET progress bar value
   useEffect(() => {
     setProgressBarValue(40)
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (activeAds < 4) {
+        setActiveAds(activeAds + 1)
+      } else {
+        setActiveAds(0)
+      }
+    }, 4500)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [activeAds])
 
   return (
     <>
@@ -153,17 +172,42 @@ const Product = () => {
                   <img src={item} alt='' key={index} className='boxLeftIMG' />
                 ))}
               </div>
-              <div className='boxRight'>
-                <div className='boxRightText'>ALL IN ONE</div>
-                <div className='boxRightText'>EASY TO USE</div>
-                <div className='boxRightText'>FREE APPLIANCE TOOLS</div>
+              <div className='boxRight' style={{ backgroundColor: ads.color }}>
+                <div className='boxRightText'>{ads.textOne}</div>
+                <div className='boxRightText'>{ads.textTwo}</div>
+                <div className='boxRightText'>{ads.textThree}</div>
 
                 <div className='boxRightNavBox'>
-                  <div className='boxRightNavBoxItem boxRightNavBoxItemActive' />
-                  <div className='boxRightNavBoxItem' />
-                  <div className='boxRightNavBoxItem' />
-                  <div className='boxRightNavBoxItem' />
-                  <div className='boxRightNavBoxItem' />
+                  <div
+                    className={
+                      activeAds === 0 ? 'boxRightNavBoxItem boxRightNavBoxItemActive' : 'boxRightNavBoxItem'
+                    }
+                    onClick={() => setActiveAds(0)}
+                  />
+                  <div
+                    className={
+                      activeAds === 1 ? 'boxRightNavBoxItem boxRightNavBoxItemActive' : 'boxRightNavBoxItem'
+                    }
+                    onClick={() => setActiveAds(1)}
+                  />
+                  <div
+                    className={
+                      activeAds === 2 ? 'boxRightNavBoxItem boxRightNavBoxItemActive' : 'boxRightNavBoxItem'
+                    }
+                    onClick={() => setActiveAds(2)}
+                  />
+                  <div
+                    className={
+                      activeAds === 3 ? 'boxRightNavBoxItem boxRightNavBoxItemActive' : 'boxRightNavBoxItem'
+                    }
+                    onClick={() => setActiveAds(3)}
+                  />
+                  <div
+                    className={
+                      activeAds === 4 ? 'boxRightNavBoxItem boxRightNavBoxItemActive' : 'boxRightNavBoxItem'
+                    }
+                    onClick={() => setActiveAds(4)}
+                  />
                 </div>
               </div>
             </div>
