@@ -207,11 +207,23 @@
   justify-content: space-around;
 }
 
+.boxGrid2 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .gridLine {
   border-right: 1px solid #a2bdd2;
 }
 
+.gridLine2 {
+  border-right: 1px solid #a2bdd2;
+}
+
 .gridLine:nth-child(6n) {
+  border-right: none;
+}
+
+.gridLine2:nth-child(5n) {
   border-right: none;
 }
 
@@ -220,14 +232,20 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   border-right: 1px solid #a2bdd2;
+}
+
+.boxDraggable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .boxLeftIMG {
   padding: 11px 50px 9px;
   height: 280px;
-  width: 550px;
+  pointer-events: none;
 }
 
 .boxRight {

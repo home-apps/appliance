@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+import Draggable from 'react-draggable'
 
 import products from '../../data/product.json'
 
@@ -16,10 +18,29 @@ import donateWhite from '../../icons/donateWhite.png'
 import favoriteCart from '../../icons/favoriteCart.png'
 import rentWhite from '../../icons/rentWhite.png'
 import financingWhite from '../../icons/financingWhite.png'
+import chat from '../../icons/chat.png'
+import syncSettings from '../../icons/syncSettings.png'
+import autofill2 from '../../icons/autofill2.png'
+import apps2 from '../../icons/apps2.png'
+import multichannel from '../../icons/multichannel.png'
+import fridges from '../../icons/fridges.png'
+import devices from '../../icons/devices.png'
+import light from '../../icons/light.png'
+import oven from '../../icons/oven.png'
+import cooker from '../../icons/cooker.png'
 
 import './dashboardLogin.css'
 
 const DashboardLogin = () => {
+  const nodeRef = React.useRef(null)
+
+  const [draggableWidth, setDraggableWidth] = useState(0)
+
+  useEffect(() => {
+    const t = document.getElementsByClassName('boxDraggable')
+    setDraggableWidth(t[0].scrollWidth - 550)
+  }, [])
+
   const product = products[0]
   return (
     <>
@@ -38,49 +59,57 @@ const DashboardLogin = () => {
             </div>
 
             <div className='box'>
-              <div className='boxItem'>
+              <div className='boxItem red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>manuals</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>tech specs</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>support</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>assistant</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>products</div>
+                <div className='boxItemText'>reminders</div>
               </div>
               <div className='boxItem red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>services</div>
+                <div className='boxItemText'>tasks</div>
+              </div>
+              <div className='boxItem red'>
+                <div className='boxItemIcon'>
+                  <img src={manual} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>assistant</div>
+              </div>
+              <div className='boxItem red'>
+                <div className='boxItemIcon'>
+                  <img src={manual} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>my orders</div>
+              </div>
+              <div className='boxItem red'>
+                <div className='boxItemIcon'>
+                  <img src={manual} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>warranties</div>
+              </div>
+              <div className='boxItem red'>
+                <div className='boxItemIcon'>
+                  <img src={manual} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>registration</div>
               </div>
             </div>
 
             <div className='box'>
               <div className='boxLeft'>
-                {product.images.map((item, index) => (
-                  <img src={item} alt='' key={index} className='boxLeftIMG' />
-                ))}
+                <Draggable
+                  nodeRef={nodeRef}
+                  axis='x'
+                  bounds={{ top: 0, left: -draggableWidth / 2, right: draggableWidth / 2, bottom: 0 }}
+                >
+                  <div className='boxDraggable' ref={nodeRef}>
+                    {product.images.map((item, index) => (
+                      <img src={item} alt='' key={index} className='boxLeftIMG' />
+                    ))}
+                  </div>
+                </Draggable>
               </div>
               <div className='boxRightGrid'>
                 <div className='boxItem'>
@@ -165,114 +194,66 @@ const DashboardLogin = () => {
               </div>
             </div>
 
-            <div className='boxGrid'>
-              <div className='boxItem gridLine'>
+            <div className='boxGrid boxGrid2'>
+              <div className='boxItem gridLine2 red'>
                 <div className='boxItemIcon '>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>ovens</div>
+                <div className='boxItemText'>explainers</div>
               </div>
-              <div className='boxItem gridLine'>
+              <div className='boxItem gridLine2'>
+                <div className='boxItemIcon'>
+                  <img src={chat} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>questions</div>
+              </div>
+              <div className='boxItem gridLine2'>
+                <div className='boxItemIcon'>
+                  <img src={syncSettings} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>updates</div>
+              </div>
+              <div className='boxItem gridLine2 red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>mobiles</div>
+                <div className='boxItemText'>safety</div>
               </div>
-              <div className='boxItem gridLine'>
+              <div className='boxItem gridLine2'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>fridges</div>
+                <div className='boxItemText'>compatibility</div>
               </div>
-              <div className='boxItem gridLine'>
+              <div className='boxItem gridLine2'>
+                <div className='boxItemIcon'>
+                  <img src={autofill2} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>news</div>
+              </div>
+              <div className='boxItem gridLine2'>
+                <div className='boxItemIcon'>
+                  <img src={multichannel} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>reviews</div>
+              </div>
+              <div className='boxItem gridLine2 red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>cookers</div>
+                <div className='boxItemText'>newsletter</div>
               </div>
-              <div className='boxItem gridLine'>
+              <div className='boxItem gridLine2'>
+                <div className='boxItemIcon'>
+                  <img src={apps2} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>add-ons</div>
+              </div>
+              <div className='boxItem gridLine2 red'>
                 <div className='boxItemIcon'>
                   <img src={manual} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>adapters</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>vacuums</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>boilers</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>air purifiers</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>microwaves</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>mowers</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>dryers</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>televisions</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>grills</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>coffemakers</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>lightbulbs</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>dishwashers</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>hobs</div>
-              </div>
-              <div className='boxItem gridLine'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>radiators</div>
+                <div className='boxItemText'>new washer</div>
               </div>
             </div>
 
@@ -329,39 +310,39 @@ const DashboardLogin = () => {
             <div className='box'>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={washing} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>manuals</div>
+                <div className='boxItemText'>resell</div>
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={fridges} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>tech specs</div>
+                <div className='boxItemText'>recycle</div>
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={devices} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>support</div>
+                <div className='boxItemText'>repurpose</div>
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={light} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>assistant</div>
+                <div className='boxItemText'>replace</div>
               </div>
               <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={oven} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>products</div>
+                <div className='boxItemText'>rent</div>
               </div>
-              <div className='boxItem red'>
+              <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={cooker} alt='' className='boxItemImage' />
                 </div>
-                <div className='boxItemText'>services</div>
+                <div className='boxItemText'>financing?</div>
               </div>
             </div>
 

@@ -1,16 +1,5 @@
 :root {
   /*COLOR*/
-  --color-background: red;
-  --color-navbar: red;
-
-  --color-main: red;
-  --color-main-second: red;
-  --color-white: #ffffff;
-  --color-box: red;
-
-  --color-text-main: orange;
-  --color-text-second: orange;
-  --color-text-title: orange;
 
   /*SIZE*/
   ---main-padding: 0px;

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+import Draggable from 'react-draggable'
+
 import products from '../../data/product.json'
 import adsList from '../../data/ads.json'
 
@@ -38,9 +40,12 @@ import './dashboard.css'
 
 const Product = () => {
   const product = products[0]
+  const nodeRef = React.useRef(null)
 
   const [freeAccountShow, setFreeAccountShow] = useState(false)
   const [progressBarValue, setProgressBarValue] = useState(40)
+
+  const [draggableWidth, setDraggableWidth] = useState(0)
 
   const [activeAds, setActiveAds] = useState(0)
 
@@ -49,6 +54,8 @@ const Product = () => {
   //SET progress bar value
   useEffect(() => {
     setProgressBarValue(40)
+    const t = document.getElementsByClassName('boxDraggable')
+    setDraggableWidth(t[0].scrollWidth - 550)
   }, [])
 
   useEffect(() => {
@@ -168,9 +175,17 @@ const Product = () => {
 
             <div className='box'>
               <div className='boxLeft'>
-                {product.images.map((item, index) => (
-                  <img src={item} alt='' key={index} className='boxLeftIMG' />
-                ))}
+                <Draggable
+                  nodeRef={nodeRef}
+                  axis='x'
+                  bounds={{ top: 0, left: -draggableWidth / 2, right: draggableWidth / 2, bottom: 0 }}
+                >
+                  <div className='boxDraggable' ref={nodeRef}>
+                    {product.images.map((item, index) => (
+                      <img src={item} alt='' key={index} className='boxLeftIMG' />
+                    ))}
+                  </div>
+                </Draggable>
               </div>
               <div className='boxRight' style={{ backgroundColor: ads.color }}>
                 <div className='boxRightText'>{ads.textOne}</div>
