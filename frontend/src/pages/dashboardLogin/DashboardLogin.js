@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import { useForm } from 'react-hook-form'
 import Draggable from 'react-draggable'
 
 import products from '../../data/product.json'
@@ -28,22 +29,274 @@ import devices from '../../icons/devices.png'
 import light from '../../icons/light.png'
 import oven from '../../icons/oven.png'
 import cooker from '../../icons/cooker.png'
+import google from '../../icons/google.png'
+import facebook from '../../icons/facebook.png'
+import settings from '../../icons/settings.png'
 
 import './dashboardLogin.css'
+
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 const DashboardLogin = () => {
   const nodeRef = React.useRef(null)
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
   const [draggableWidth, setDraggableWidth] = useState(0)
+
+  const [showPopup, setShowPopup] = useState(false)
+  const [selectedPopupValue, setSelectedPopupValue] = useState(0)
 
   useEffect(() => {
     const t = document.getElementsByClassName('boxDraggable')
     setDraggableWidth(t[0].scrollWidth - 550)
   }, [])
 
+  const onSubmit = (formData) => {
+    console.log(errors)
+  }
+
+  handleSubmit(onSubmit)
+  const openPopup = (value) => {
+    setShowPopup(true)
+    setSelectedPopupValue(value)
+  }
+
   const product = products[0]
   return (
     <>
+      <div className={showPopup ? 'popup popupActive' : 'popup'}>
+        <div className='popupHeader'>
+          <div
+            className={selectedPopupValue === 0 ? 'popupHeaderItem popupHeaderItemActive' : 'popupHeaderItem'}
+            onClick={() => openPopup(0)}
+          >
+            <img src={bookmark} alt='' className='popupHeaderIMG' />
+            Save Model
+          </div>
+          <div
+            className={selectedPopupValue === 1 ? 'popupHeaderItem popupHeaderItemActive' : 'popupHeaderItem'}
+            onClick={() => openPopup(1)}
+          >
+            <img src={qrCode} alt='' className='popupHeaderIMG' />
+            QR Code
+          </div>
+          <div
+            className={selectedPopupValue === 2 ? 'popupHeaderItem popupHeaderItemActive' : 'popupHeaderItem'}
+            onClick={() => openPopup(2)}
+          >
+            <img src={share} alt='' className='popupHeaderIMG' />
+            Share
+          </div>
+          <div className='popupHeaderArrow' onClick={() => setShowPopup(false)}>
+            {'>'}
+          </div>
+        </div>
+        {selectedPopupValue === 0 ? (
+          <div className='popupContent'>
+            <div className='popupLeft'>
+              <div className='popupLeftTitle'>Create New Account</div>
+              <div className='popupLeftText'>
+                Save this washer model in your free account and use it when you need it, no spam, privacy
+                protected.
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Save your favorite products & services</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Warranty & maintenance reminders</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Find & compare prices</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Find, compare & book local technicians</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Find user manuals</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Get easy troubleshooting help</div>
+              </div>
+            </div>
+            <div className='popupRight'>
+              <input
+                type='text'
+                className='popupInput'
+                {...register('name', { required: true })}
+                placeholder={'Name'}
+              />
+              <input
+                type='text'
+                className='popupInput'
+                {...register('email', { required: true, pattern: { value: EMAIL_REGEX } })}
+                placeholder={'Email'}
+              />
+              <input
+                type='password'
+                className='popupInput'
+                {...register('password', { required: true })}
+                placeholder={'Password'}
+              />
+
+              <div className='popupTerms'>
+                <div className='popupTermsBox' />
+                <div className='popupTermsText'>
+                  I read and agree{' '}
+                  <span style={{ color: '#3E92FF', textDecoration: 'underline' }}>Terms & Conditions</span>
+                </div>
+              </div>
+              <div className='popupContinueWith'>
+                <div className='popupContinueWithIcon'>
+                  <img src={google} alt='' className='popupContinueWithIMG' />
+                </div>
+                <div className='popupContinueWithText'>Continue with Google</div>
+              </div>
+              <div className='popupContinueWith'>
+                <div className='popupContinueWithIcon'>
+                  <img src={facebook} alt='' className='popupContinueWithIMG' />
+                </div>
+                <div className='popupContinueWithText'>Continue with Facebook</div>
+              </div>
+              <div className='popupLogin'>
+                Already have an account?{' '}
+                <span style={{ color: '#3E92FF', textDecoration: 'underline' }}>Log-in Here</span>
+              </div>
+            </div>
+          </div>
+        ) : selectedPopupValue === 1 ? (
+          <div className='popupContent'>
+            <div className='popupLeft'>
+              <div className='popupLeftTitle'>BOSCH WAU28PH9GB Series 6 QR Code</div>
+              <div className='popupLeftText'>
+                Save or share this QR code with household members, technicians or for anyone who needs tech specs.
+              </div>
+              <div className='popupLeftText'>No more guessing, print it, stick it to find it quickly.</div>
+            </div>
+            <div className='popupRight'>
+              <div className='popupLeftTitle' style={{ marginBottom: '22px' }}>
+                Save & Share Your QR Code
+              </div>
+              <input
+                type='text'
+                className='popupInput'
+                {...register('name', { required: true })}
+                placeholder={'Name'}
+              />
+              <input
+                type='text'
+                className='popupInput'
+                {...register('email', { required: true, pattern: { value: EMAIL_REGEX } })}
+                placeholder={'Email'}
+              />
+              <div className='popupTerms'>
+                <div className='popupTermsBox' />
+                <div className='popupTermsText'>
+                  I read and agree{' '}
+                  <span style={{ color: '#3E92FF', textDecoration: 'underline' }}>Terms & Conditions</span>
+                </div>
+              </div>
+
+              <div className='popupButton'>PRINT QR CODE</div>
+              <div className='popupButton popupButtonColor'>DOWNLOAD QR CODE</div>
+            </div>
+          </div>
+        ) : (
+          <div className='popupContent'>
+            <div className='popupLeft'>
+              <div className='popupLeftTitle'>Share This Washer Model</div>
+              <div className='popupLeftText'>
+                Share a simple link or share the washer in your own account for a friend, household member or a
+                technician who needs tech specs.
+              </div>
+
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>View device model</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Join device model (household member)</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>View device specs (technicians)</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>View device details (selling/donating)</div>
+              </div>
+              <div className='popupCircleItem'>
+                <div className='popupCircleItemDot' />
+                <div className='popupCircleItemText'>Share to get the right spare parts</div>
+              </div>
+            </div>
+            <div className='popupRight'>
+              <div className='popupRightScare'>
+                <div className='popupRightScareLeft'>
+                  <input
+                    type='text'
+                    className='popupInput'
+                    style={{ width: 'calc(100% - 50px)' }}
+                    {...register('shareModel', { required: true, pattern: { value: EMAIL_REGEX } })}
+                    placeholder={'"Hi, this is my washer model"'}
+                  />
+                  <div className='popupInputEmail'>
+                    <input
+                      type='text'
+                      className='popupInputNoBorder'
+                      {...register('email', { required: true, pattern: { value: EMAIL_REGEX } })}
+                      placeholder={'Enter email'}
+                    />
+                    <div className='popupInputEmailButton'>Send</div>
+                  </div>
+                  <input
+                    type='text'
+                    className='popupInput'
+                    style={{ width: 'calc(100% - 50px)' }}
+                    {...register('password', { required: true, pattern: { value: EMAIL_REGEX } })}
+                    placeholder={'Share with Password'}
+                  />
+                </div>
+                <div className='popupRightScareRight'>
+                  <div className='popupRightScareRightItem'>
+                    <div className='popupRightScareRightItemIcon'>
+                      <img src={settings} alt='' className='popupRightScareRightItemIconIMG' />
+                    </div>
+                    <div className='popupRightScareRightItemText'>Can View</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='popupRightScare'>
+                <div className='popupRightScareLeft'>
+                  <div className='popupRightScareLink'>Copy Link</div>
+                  <div className='popupRightScareLink2'>Share with Password</div>
+                </div>
+                <div className='popupRightScareRight'>
+                  <div className='popupRightScareRightItem'>
+                    <div className='popupRightScareRightItemIcon'>
+                      <img src={settings} alt='' className='popupRightScareRightItemIconIMG' />
+                    </div>
+                    <div className='popupRightScareRightItemText'>Can View</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
       <div className='componentFirst'>
         <div className='componentSecond'>
           <div className='main'>
@@ -153,19 +406,19 @@ const DashboardLogin = () => {
 
             <div className='boxContainer'>
               <div className='boxNoEffect'>
-                <div className='boxItem'>
+                <div className='boxItem' onClick={() => openPopup(0)}>
                   <div className='boxItemIcon'>
                     <img src={bookmark} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>save model</div>
                 </div>
-                <div className='boxItem'>
+                <div className='boxItem' onClick={() => openPopup(1)}>
                   <div className='boxItemIcon'>
                     <img src={qrCode} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>QR code</div>
                 </div>
-                <div className='boxItem'>
+                <div className='boxItem' onClick={() => openPopup(2)}>
                   <div className='boxItemIcon'>
                     <img src={share} alt='' className='boxItemImage' />
                   </div>
