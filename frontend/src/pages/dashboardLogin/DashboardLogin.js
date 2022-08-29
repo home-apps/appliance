@@ -32,6 +32,20 @@ import cooker from '../../icons/cooker.png'
 import google from '../../icons/google.png'
 import facebook from '../../icons/facebook.png'
 import settings from '../../icons/settings.png'
+import redError from '../../icons/redError.png'
+import redRepair from '../../icons/redRepair.png'
+import explainers from '../../icons/explainers.png'
+import redTechnician from '../../icons/redTechnician.png'
+import safety from '../../icons/safety.png'
+import newsletter from '../../icons/newsletter.png'
+import maintenance from '../../icons/maintenance.png'
+import bluAdd from '../../icons/bluAdd.png'
+import bluReminder from '../../icons/bluReminder.png'
+import TasksToDo from '../../icons/TasksToDo.png'
+import hosstAPP from '../../icons/hosstAPP.png'
+import purchasesOrders from '../../icons/purchasesOrders.png'
+import Warranties from '../../icons/Warranties.png'
+import registration from '../../icons/registration.png'
 
 import './dashboardLogin.css'
 
@@ -312,39 +326,39 @@ const DashboardLogin = () => {
             </div>
 
             <div className='box'>
-              <div className='boxItem red'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ border: '1px solid #3E92FF' }}>
+                  <img src={bluReminder} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>reminders</div>
               </div>
-              <div className='boxItem red'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ border: '1px solid #3E92FF' }}>
+                  <img src={TasksToDo} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>tasks</div>
               </div>
-              <div className='boxItem red'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ border: '1px solid #3E92FF' }}>
+                  <img src={hosstAPP} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>assistant</div>
               </div>
-              <div className='boxItem red'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxItem '>
+                <div className='boxItemIcon' style={{ backgroundColor: '#3E92FF' }}>
+                  <img src={purchasesOrders} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>my orders</div>
               </div>
-              <div className='boxItem red'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxItem '>
+                <div className='boxItemIcon' style={{ backgroundColor: '#3E92FF' }}>
+                  <img src={Warranties} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>warranties</div>
               </div>
-              <div className='boxItem red'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxItem '>
+                <div className='boxItemIcon' style={{ backgroundColor: '#3E92FF' }}>
+                  <img src={registration} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>registration</div>
               </div>
@@ -395,9 +409,9 @@ const DashboardLogin = () => {
                   </div>
                   <div className='boxItemText'>services</div>
                 </div>
-                <div className='boxItem red'>
+                <div className='boxItem'>
                   <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                    <img src={maintenance} alt='' className='boxItemImage' />
                   </div>
                   <div className='boxItemText'>maintenance</div>
                 </div>
@@ -425,32 +439,38 @@ const DashboardLogin = () => {
                   <div className='boxItemText'>share</div>
                 </div>
               </div>
-              <div className='boxNoEffect'>
-                <div className='boxItem red'>
-                  <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxNoEffect' style={{ backgroundColor: '#FF605F', border: '1px solid #FF605F' }}>
+                <div className='boxItem '>
+                  <div className='boxItemIcon' style={{ border: '1px solid #FF5E3D' }}>
+                    <img src={redError} alt='' className='boxItemImage' />
                   </div>
-                  <div className='boxItemText'>error codes</div>
+                  <div className='boxItemText' style={{ color: '#ffffff' }}>
+                    error codes
+                  </div>
                 </div>
-                <div className='boxItem red'>
-                  <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItem '>
+                  <div className='boxItemIcon' style={{ border: '1px solid #FF5E3D' }}>
+                    <img src={redRepair} alt='' className='boxItemImage' />
                   </div>
-                  <div className='boxItemText'>troubleshooting</div>
+                  <div className='boxItemText' style={{ color: '#ffffff' }}>
+                    troubleshooting
+                  </div>
                 </div>
-                <div className='boxItem red'>
-                  <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItem'>
+                  <div className='boxItemIcon' style={{ border: '1px solid #FF5E3D' }}>
+                    <img src={redTechnician} alt='' className='boxItemImage' />
                   </div>
-                  <div className='boxItemText'>technicians</div>
+                  <div className='boxItemText' style={{ color: '#ffffff' }}>
+                    technicians
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className='boxGrid boxGrid2'>
-              <div className='boxItem gridLine2 red'>
+              <div className='boxItem gridLine2'>
                 <div className='boxItemIcon '>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={explainers} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>explainers</div>
               </div>
@@ -466,9 +486,9 @@ const DashboardLogin = () => {
                 </div>
                 <div className='boxItemText'>updates</div>
               </div>
-              <div className='boxItem gridLine2 red'>
+              <div className='boxItem gridLine2'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={safety} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>safety</div>
               </div>
@@ -490,9 +510,9 @@ const DashboardLogin = () => {
                 </div>
                 <div className='boxItemText'>reviews</div>
               </div>
-              <div className='boxItem gridLine2 red'>
+              <div className='boxItem gridLine2'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={newsletter} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>newsletter</div>
               </div>
@@ -502,9 +522,9 @@ const DashboardLogin = () => {
                 </div>
                 <div className='boxItemText'>add-ons</div>
               </div>
-              <div className='boxItem gridLine2 red'>
-                <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxItem gridLine2'>
+                <div className='boxItemIcon' style={{ border: '2px dashed #3E92FF' }}>
+                  <img src={bluAdd} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>new washer</div>
               </div>

@@ -295,6 +295,17 @@
   flex: 75%;
 }
 
+.popupLeftIMG {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupLeftImage {
+  width: 226px;
+  height: 280px;
+}
+
 .popupRightScareRight {
   flex: 25%;
 }

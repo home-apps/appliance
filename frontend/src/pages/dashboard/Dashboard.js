@@ -39,6 +39,13 @@ import mowers from '../../icons/mowers.png'
 import google from '../../icons/google.png'
 import facebook from '../../icons/facebook.png'
 import settings from '../../icons/settings.png'
+import QRcode from '../../icons/QRcode.jpg'
+import boiler from '../../icons/boiler.png'
+import grill from '../../icons/grill.png'
+import redError from '../../icons/redError.png'
+import redRepair from '../../icons/redRepair.png'
+import redTechnician from '../../icons/redTechnician.png'
+import hosstAPP from '../../icons/hosstAPP.png'
 
 import './dashboard.css'
 
@@ -257,6 +264,9 @@ const Product = () => {
                 Save or share this QR code with household members, technicians or for anyone who needs tech specs.
               </div>
               <div className='popupLeftText'>No more guessing, print it, stick it to find it quickly.</div>
+              <div className='popupLeftIMG'>
+                <img src={QRcode} alt='' className='popupLeftImage' />
+              </div>
             </div>
             <div className='popupRight'>
               <div className='popupLeftTitle' style={{ marginBottom: '22px' }}>
@@ -405,9 +415,9 @@ const Product = () => {
                 </div>
                 <div className='boxItemText'>support</div>
               </div>
-              <div className='boxItem red'>
+              <div className='boxItem'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={hosstAPP} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>assistant</div>
               </div>
@@ -500,24 +510,30 @@ const Product = () => {
                   <div className='boxItemText'>share</div>
                 </div>
               </div>
-              <div className='boxNoEffect'>
-                <div className='boxItem red'>
-                  <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+              <div className='boxNoEffect' style={{ backgroundColor: '#FF605F', border: '1px solid #FF605F' }}>
+                <div className='boxItem '>
+                  <div className='boxItemIcon' style={{ border: '1px solid #FF5E3D' }}>
+                    <img src={redError} alt='' className='boxItemImage' />
                   </div>
-                  <div className='boxItemText'>error codes</div>
+                  <div className='boxItemText' style={{ color: '#ffffff' }}>
+                    error codes
+                  </div>
                 </div>
-                <div className='boxItem red'>
-                  <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItem '>
+                  <div className='boxItemIcon' style={{ border: '1px solid #FF5E3D' }}>
+                    <img src={redRepair} alt='' className='boxItemImage' />
                   </div>
-                  <div className='boxItemText'>troubleshooting</div>
+                  <div className='boxItemText' style={{ color: '#ffffff' }}>
+                    troubleshooting
+                  </div>
                 </div>
-                <div className='boxItem red'>
-                  <div className='boxItemIcon'>
-                    <img src={manual} alt='' className='boxItemImage' />
+                <div className='boxItem'>
+                  <div className='boxItemIcon' style={{ border: '1px solid #FF5E3D' }}>
+                    <img src={redTechnician} alt='' className='boxItemImage' />
                   </div>
-                  <div className='boxItemText'>technicians</div>
+                  <div className='boxItemText' style={{ color: '#ffffff' }}>
+                    technicians
+                  </div>
                 </div>
               </div>
             </div>
@@ -608,9 +624,9 @@ const Product = () => {
                 </div>
                 <div className='boxItemText'>vacuums</div>
               </div>
-              <div className='boxItem gridLine red'>
+              <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={boiler} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>boilers</div>
               </div>
@@ -644,9 +660,9 @@ const Product = () => {
                 </div>
                 <div className='boxItemText'>televisions</div>
               </div>
-              <div className='boxItem gridLine red'>
+              <div className='boxItem gridLine'>
                 <div className='boxItemIcon'>
-                  <img src={manual} alt='' className='boxItemImage' />
+                  <img src={grill} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>grills</div>
               </div>
