@@ -5,7 +5,6 @@ import info from '../../icons/info.png'
 import favoriteStore from '../../icons/favoriteStore.png'
 import search from '../../icons/search.png'
 import account from '../../icons/account.png'
-import washingMachine from '../../icons/washing-machine.png'
 import appliances from '../../icons/appliances.png'
 import apps from '../../icons/apps.png'
 import repairs from '../../icons/repairs.png'
@@ -31,6 +30,8 @@ import airfyer from '../../icons/airfyer.png'
 import thermostat from '../../icons/thermostat.png'
 import boiler from '../../icons/boiler.png'
 import juicerJuice from '../../icons/juicerJuice.png'
+import Business from '../../icons/Business.png'
+import Technicians from '../../icons/Technicians.png'
 
 import './menuSlides.css'
 import { useNavigate } from 'react-router-dom'
@@ -112,8 +113,8 @@ const MenuSlides = () => {
                     <img src={repairs} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Troubleshooting</div>
                   </div>
-                  <div className='menuDropdownItem red'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                  <div className='menuDropdownItem'>
+                    <img src={Technicians} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Technicians</div>
                   </div>
                   <div className='menuDropdownItem'>
@@ -148,8 +149,8 @@ const MenuSlides = () => {
                     <img src={userSettings} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>Account</div>
                   </div>
-                  <div className='menuDropdownItem red'>
-                    <img src={washingMachine} alt='' className='menuDropdownIMG' />
+                  <div className='menuDropdownItem'>
+                    <img src={Business} alt='' className='menuDropdownIMG' />
                     <div className='menuDropdownItemText'>For Business</div>
                   </div>
                 </div>
