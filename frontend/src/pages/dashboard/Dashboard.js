@@ -53,6 +53,7 @@ import microphone2 from '../../icons/microphone2.png'
 import upload from '../../icons/upload.png'
 import help from '../../icons/help.png'
 import arrow2 from '../../icons/arrow2.png'
+import reminderNotification from '../../icons/reminderNotification.png'
 
 import './dashboard.css'
 
@@ -438,7 +439,7 @@ const Product = () => {
                 <div className='popupAssistantItemText'>Find a new washer or product</div>
               </div>
               <div className='popupAssistantItem'>
-                <img src={manual} alt='' className='popupAssistantItemIcon red' />
+                <img src={reminderNotification} alt='' className='popupAssistantItemIcon' />
                 <div className='popupAssistantItemText'>Create washer related reminder</div>
               </div>
               <div className='popupAssistantItem'>
