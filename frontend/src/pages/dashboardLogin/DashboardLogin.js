@@ -46,6 +46,13 @@ import hosstAPP from '../../icons/hosstAPP.png'
 import purchasesOrders from '../../icons/purchasesOrders.png'
 import Warranties from '../../icons/Warranties.png'
 import registration from '../../icons/registration.png'
+import repairs from '../../icons/repairs.png'
+import Technicians from '../../icons/Technicians.png'
+import info from '../../icons/info.png'
+import microphone2 from '../../icons/microphone2.png'
+import upload from '../../icons/upload.png'
+import help from '../../icons/help.png'
+import arrow2 from '../../icons/arrow2.png'
 
 import './dashboardLogin.css'
 
@@ -64,6 +71,8 @@ const DashboardLogin = () => {
 
   const [showPopup, setShowPopup] = useState(false)
   const [selectedPopupValue, setSelectedPopupValue] = useState(0)
+  const [showAssistant, setShowAssistant] = useState(true)
+  const [selectedAssistantValue, setSelectedAssistantValue] = useState(0)
 
   useEffect(() => {
     const t = document.getElementsByClassName('boxDraggable')
@@ -76,8 +85,14 @@ const DashboardLogin = () => {
 
   handleSubmit(onSubmit)
   const openPopup = (value) => {
+    setShowAssistant(false)
     setShowPopup(true)
     setSelectedPopupValue(value)
+  }
+  const openAssistantPopup = (value) => {
+    setShowPopup(false)
+    setShowAssistant(true)
+    setSelectedAssistantValue(value)
   }
 
   const product = products[0]
@@ -107,7 +122,7 @@ const DashboardLogin = () => {
             Share
           </div>
           <div className='popupHeaderArrow' onClick={() => setShowPopup(false)}>
-            {'>'}
+            <img src={arrow2} alt='' className='popupHeaderArrowImg' />
           </div>
         </div>
         {selectedPopupValue === 0 ? (
@@ -308,6 +323,163 @@ const DashboardLogin = () => {
               </div>
             </div>
           </div>
+        )}
+      </div>
+
+      <div className={showAssistant ? 'popup popupActive' : 'popup'}>
+        <div className='popupHeader'>
+          <div
+            className={selectedAssistantValue === 0 ? 'popupHeaderItem popupHeaderItemActive' : 'popupHeaderItem'}
+            onClick={() => openAssistantPopup(0)}
+          >
+            <img src={hosstAPP} alt='' className='popupHeaderIMG' />
+            My Assistant
+          </div>
+          <div
+            className={selectedAssistantValue === 1 ? 'popupHeaderItem popupHeaderItemActive' : 'popupHeaderItem'}
+            onClick={() => openAssistantPopup(1)}
+          >
+            <img src={info} alt='' className='popupHeaderIMG' />
+            Frequent Ask Questions
+          </div>
+          <div className='popupHeaderArrow' onClick={() => setShowAssistant(false)}>
+            <img src={arrow2} alt='' className='popupHeaderArrowImg' />
+          </div>
+        </div>
+
+        {selectedAssistantValue === 0 ? (
+          <div className='popupContent'>
+            <div className='popupLeft2'>
+              <div className='popupAssistantItem'>
+                <img src={manual} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Find a washer user manual</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={repairs} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Washer troubleshooting help</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={Technicians} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Find a washer technician</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={favoriteStore} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Find a new washer or product</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={manual} alt='' className='popupAssistantItemIcon red' />
+                <div className='popupAssistantItemText'>Create washer related reminder</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={qrCode} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Print my washer QR code</div>
+              </div>
+            </div>
+            <div className='popupRight2' style={{ justifyContent: 'space-between' }}>
+              <div className='popupAssistantMessageBoxHeader'>
+                <div className='popupAssistantMessageBoxHeaderItem'>
+                  <img src={hosstAPP} alt='' className='popupAssistantMessageBoxHeaderItemIcon' />
+                  <div className='popupAssistantMessageBoxHeaderItemTextActive'>How can I help?</div>
+                </div>
+                <div className='popupAssistantMessageBoxHeaderItem'>
+                  <div className='popupAssistantMessageBoxHeaderItemText'>I need help with my Bosh washer</div>
+                </div>
+              </div>
+              <div className='popupAssistantMessageBoxFooter'>
+                <input
+                  type='text'
+                  placeholder='type message here'
+                  className='popupAssistantMessageBoxFooterInput'
+                />
+                <div className='popupAssistantMessageBoxFooterIcon'>
+                  <img src={upload} alt='' className='popupAssistantMessageBoxFooterIconIMG' />
+                </div>
+                <div className='popupAssistantMessageBoxFooterIcon'>
+                  <img src={microphone2} alt='' className='popupAssistantMessageBoxFooterIconIMG' />
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : selectedAssistantValue === 1 ? (
+          <div className='popupContent'>
+            <div className='popupLeft2'>
+              <div className='popupFAQ'>
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I find my washer model?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I add/save my washer model?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How to find a good washer?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>Is this app free to use?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I get technician quotes?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How to get troubleshooting help?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>What to do if my model isn't listed?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I list my services?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I list my products?</div>
+                </div>
+              </div>
+            </div>
+            <div className='popupRight2'>
+              <div className='popupAssistantMessageBoxHeader'>
+                <div className='popupAssistantMessageBoxHeaderItem'>
+                  <div className='popupAssistantMessageBoxHeaderItemText'>
+                    Here is some help guides for the Bosch washer model WAU28PH9GB.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <></>
         )}
       </div>
 

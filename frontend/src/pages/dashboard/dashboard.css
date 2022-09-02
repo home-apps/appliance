@@ -171,10 +171,13 @@
   position: absolute;
   top: 26px;
   right: 26px;
-  background-color: red;
   cursor: pointer;
   width: 20px;
   height: 20px;
+}
+
+.popupHeaderArrowImg {
+  width: 20px;
 }
 
 .popupHeaderIMG {
@@ -186,6 +189,155 @@
   display: flex;
   padding: 20px 22px;
   gap: 25px;
+}
+
+.popupAssistantItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 6px 6px #d5e7ff;
+  border: 1px solid #a2bdd2;
+  border-radius: 24px;
+  background-color: #ffffff;
+  width: calc(100% - 40px);
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+
+.popupAssistantItemIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.popupAssistantItemText {
+  letter-spacing: 0.51px;
+  color: #000000;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.popupLeft2 {
+  width: 100%;
+}
+
+.popupRight2 {
+  width: 100%;
+  border: 1px solid #a2bdd2;
+  border-radius: 12px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.popupAssistantMessageBoxFooter {
+  border: 1px solid #a2bdd2;
+  border-radius: 12px;
+  width: calc(100% - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #f5f8ff;
+  padding: 12px 15px;
+}
+
+.popupAssistantMessageBoxFooterIconIMG {
+  width: 25px;
+  height: auto;
+  margin-left: 25px;
+}
+
+.popupAssistantMessageBoxFooterInput {
+  border: none;
+  background-color: transparent;
+  width: 70%;
+
+  letter-spacing: 0.51px;
+  color: #727272;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.popupAssistantMessageBoxFooterInput:focus {
+  outline: none;
+}
+
+.popupAssistantMessageBoxHeader {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.popupAssistantMessageBoxHeaderItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.popupAssistantMessageBoxHeaderItemIcon {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+
+.popupAssistantMessageBoxHeaderItemTextActive {
+  letter-spacing: 0.51px;
+  color: #3e92ff;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.popupAssistantMessageBoxHeaderItemText {
+  letter-spacing: 0.51px;
+  color: #404040;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.popupFAQItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 11px;
+  border-bottom: 1px solid #a2bdd2;
+}
+
+.popupFAQItemIcon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid rgba(162, 189, 210, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupFAQItemIMG {
+  width: 32px;
+  height: 32px;
+}
+
+.popupFAQItemText {
+  letter-spacing: 0.47px;
+  color: #425881;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.popupFAQ {
+  border: 1px solid #a2bdd2;
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
+.popupFAQ::-webkit-scrollbar {
+  width: 0;
 }
 
 .popupLeft {

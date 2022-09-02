@@ -118,6 +118,20 @@
   padding: 10px 0;
 }
 
+.menuDropdownTitleTitleText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  letter-spacing: 0.47px;
+  color: #212020;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
 .menuDropdownTitleText {
   display: flex;
   align-items: center;

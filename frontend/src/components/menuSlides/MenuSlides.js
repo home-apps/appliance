@@ -194,6 +194,7 @@ const MenuSlides = () => {
                       <img src={apps} alt='' className='MenuSlidesIconRightAppOpen' />
                     </div>
                   </div>
+                  <div className='menuDropdownTitleTitleText'>try other free apps</div>
                   <div className='menuDropdownGrid'>
                     <div className='menuDropdownGridItem'>
                       <div className='menuDropdownGridItemIcon'>

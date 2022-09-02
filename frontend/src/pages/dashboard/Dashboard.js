@@ -46,6 +46,13 @@ import redError from '../../icons/redError.png'
 import redRepair from '../../icons/redRepair.png'
 import redTechnician from '../../icons/redTechnician.png'
 import hosstAPP from '../../icons/hosstAPP.png'
+import repairs from '../../icons/repairs.png'
+import Technicians from '../../icons/Technicians.png'
+import info from '../../icons/info.png'
+import microphone2 from '../../icons/microphone2.png'
+import upload from '../../icons/upload.png'
+import help from '../../icons/help.png'
+import arrow2 from '../../icons/arrow2.png'
 
 import './dashboard.css'
 
@@ -59,6 +66,8 @@ const Product = () => {
   const [progressBarValue, setProgressBarValue] = useState(40)
   const [showPopup, setShowPopup] = useState(false)
   const [selectedPopupValue, setSelectedPopupValue] = useState(0)
+  const [showAssistant, setShowAssistant] = useState(true)
+  const [selectedAssistantValue, setSelectedAssistantValue] = useState(0)
 
   const [draggableWidth, setDraggableWidth] = useState(0)
 
@@ -99,8 +108,14 @@ const Product = () => {
 
   handleSubmit(onSubmit)
   const openPopup = (value) => {
+    setShowAssistant(false)
     setShowPopup(true)
     setSelectedPopupValue(value)
+  }
+  const openAssistantPopup = (value) => {
+    setShowPopup(false)
+    setShowAssistant(true)
+    setSelectedAssistantValue(value)
   }
 
   return (
@@ -175,7 +190,7 @@ const Product = () => {
             Share
           </div>
           <div className='popupHeaderArrow' onClick={() => setShowPopup(false)}>
-            {'>'}
+            <img src={arrow2} alt='' className='popupHeaderArrowImg' />
           </div>
         </div>
         {selectedPopupValue === 0 ? (
@@ -382,6 +397,163 @@ const Product = () => {
         )}
       </div>
 
+      <div className={showAssistant ? 'popup popupActive' : 'popup'}>
+        <div className='popupHeader'>
+          <div
+            className={selectedAssistantValue === 0 ? 'popupHeaderItem popupHeaderItemActive' : 'popupHeaderItem'}
+            onClick={() => openAssistantPopup(0)}
+          >
+            <img src={hosstAPP} alt='' className='popupHeaderIMG' />
+            My Assistant
+          </div>
+          <div
+            className={selectedAssistantValue === 1 ? 'popupHeaderItem popupHeaderItemActive' : 'popupHeaderItem'}
+            onClick={() => openAssistantPopup(1)}
+          >
+            <img src={info} alt='' className='popupHeaderIMG' />
+            Frequent Ask Questions
+          </div>
+          <div className='popupHeaderArrow' onClick={() => setShowAssistant(false)}>
+            <img src={arrow2} alt='' className='popupHeaderArrowImg' />
+          </div>
+        </div>
+
+        {selectedAssistantValue === 0 ? (
+          <div className='popupContent'>
+            <div className='popupLeft2'>
+              <div className='popupAssistantItem'>
+                <img src={manual} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Find a washer user manual</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={repairs} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Washer troubleshooting help</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={Technicians} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Find a washer technician</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={favoriteStore} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Find a new washer or product</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={manual} alt='' className='popupAssistantItemIcon red' />
+                <div className='popupAssistantItemText'>Create washer related reminder</div>
+              </div>
+              <div className='popupAssistantItem'>
+                <img src={qrCode} alt='' className='popupAssistantItemIcon' />
+                <div className='popupAssistantItemText'>Print my washer QR code</div>
+              </div>
+            </div>
+            <div className='popupRight2' style={{ justifyContent: 'space-between' }}>
+              <div className='popupAssistantMessageBoxHeader'>
+                <div className='popupAssistantMessageBoxHeaderItem'>
+                  <img src={hosstAPP} alt='' className='popupAssistantMessageBoxHeaderItemIcon' />
+                  <div className='popupAssistantMessageBoxHeaderItemTextActive'>How can I help?</div>
+                </div>
+                <div className='popupAssistantMessageBoxHeaderItem'>
+                  <div className='popupAssistantMessageBoxHeaderItemText'>I need help with my Bosh washer</div>
+                </div>
+              </div>
+              <div className='popupAssistantMessageBoxFooter'>
+                <input
+                  type='text'
+                  placeholder='type message here'
+                  className='popupAssistantMessageBoxFooterInput'
+                />
+                <div className='popupAssistantMessageBoxFooterIcon'>
+                  <img src={upload} alt='' className='popupAssistantMessageBoxFooterIconIMG' />
+                </div>
+                <div className='popupAssistantMessageBoxFooterIcon'>
+                  <img src={microphone2} alt='' className='popupAssistantMessageBoxFooterIconIMG' />
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : selectedAssistantValue === 1 ? (
+          <div className='popupContent'>
+            <div className='popupLeft2'>
+              <div className='popupFAQ'>
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I find my washer model?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I add/save my washer model?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How to find a good washer?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>Is this app free to use?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I get technician quotes?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How to get troubleshooting help?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>What to do if my model isn't listed?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I list my services?</div>
+                </div>
+
+                <div className='popupFAQItem'>
+                  <div className='popupFAQItemIcon'>
+                    <img src={help} alt='' className='popupFAQItemIMG' />
+                  </div>
+                  <div className='popupFAQItemText'>How can I list my products?</div>
+                </div>
+              </div>
+            </div>
+            <div className='popupRight2'>
+              <div className='popupAssistantMessageBoxHeader'>
+                <div className='popupAssistantMessageBoxHeaderItem'>
+                  <div className='popupAssistantMessageBoxHeaderItemText'>
+                    Here is some help guides for the Bosch washer model WAU28PH9GB.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+
       <div className='componentFirst'>
         <div className='componentSecond'>
           <div className='main'>
@@ -415,7 +587,7 @@ const Product = () => {
                 </div>
                 <div className='boxItemText'>support</div>
               </div>
-              <div className='boxItem'>
+              <div className='boxItem' onClick={() => openAssistantPopup(0)}>
                 <div className='boxItemIcon'>
                   <img src={hosstAPP} alt='' className='boxItemImage' />
                 </div>
@@ -539,52 +711,7 @@ const Product = () => {
             </div>
 
             <div className='title'>
-              <div className='productHeaderTitle'>
-                Explore more ways to buy or replace a BOSCH WAU28PH9GB Series 6 washer
-              </div>
-            </div>
-
-            <div className='boxNoEffect'>
-              <div className='boxItem'>
-                <div className='boxItemIcon' style={{ backgroundColor: '#9D80FE', borderColor: '#9474FF' }}>
-                  <img src={resell} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>resell</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon' style={{ backgroundColor: '#34C85A', borderColor: '#34C85A' }}>
-                  <img src={recycleWhite} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>recycle</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon' style={{ backgroundColor: '#FFD60A', borderColor: '#FFD60A' }}>
-                  <img src={donateWhite} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>repurpose</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon' style={{ backgroundColor: '#3E92FF', borderColor: '#3E92FF' }}>
-                  <img src={favoriteCart} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>replace</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon' style={{ backgroundColor: '#FC8A4F', borderColor: '#FF6617' }}>
-                  <img src={rentWhite} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>rent</div>
-              </div>
-              <div className='boxItem'>
-                <div className='boxItemIcon' style={{ backgroundColor: '#113E92', borderColor: '#113E92' }}>
-                  <img src={financingWhite} alt='' className='boxItemImage' />
-                </div>
-                <div className='boxItemText'>financing</div>
-              </div>
-            </div>
-
-            <div className='title'>
-              <div className='productHeaderTitle'>Manager Everything At Home With Device-Specific Free Apps</div>
+              <div className='productHeaderTitle'>Manage Everything At Home With Device-Specific Free Apps</div>
             </div>
 
             <div className='boxGrid'>
@@ -695,6 +822,51 @@ const Product = () => {
                   <img src={radiator} alt='' className='boxItemImage' />
                 </div>
                 <div className='boxItemText'>radiators</div>
+              </div>
+            </div>
+
+            <div className='title'>
+              <div className='productHeaderTitle'>
+                Explore more ways to buy or replace a BOSCH WAU28PH9GB Series 6 washer
+              </div>
+            </div>
+
+            <div className='boxNoEffect'>
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ backgroundColor: '#9D80FE', borderColor: '#9474FF' }}>
+                  <img src={resell} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>resell</div>
+              </div>
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ backgroundColor: '#34C85A', borderColor: '#34C85A' }}>
+                  <img src={recycleWhite} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>recycle</div>
+              </div>
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ backgroundColor: '#FFD60A', borderColor: '#FFD60A' }}>
+                  <img src={donateWhite} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>repurpose</div>
+              </div>
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ backgroundColor: '#3E92FF', borderColor: '#3E92FF' }}>
+                  <img src={favoriteCart} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>replace</div>
+              </div>
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ backgroundColor: '#FC8A4F', borderColor: '#FF6617' }}>
+                  <img src={rentWhite} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>rent</div>
+              </div>
+              <div className='boxItem'>
+                <div className='boxItemIcon' style={{ backgroundColor: '#113E92', borderColor: '#113E92' }}>
+                  <img src={financingWhite} alt='' className='boxItemImage' />
+                </div>
+                <div className='boxItemText'>financing</div>
               </div>
             </div>
 
