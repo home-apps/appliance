@@ -72,7 +72,7 @@ const DashboardLogin = () => {
 
   const [showPopup, setShowPopup] = useState(false)
   const [selectedPopupValue, setSelectedPopupValue] = useState(0)
-  const [showAssistant, setShowAssistant] = useState(true)
+  const [showAssistant, setShowAssistant] = useState(false)
   const [selectedAssistantValue, setSelectedAssistantValue] = useState(0)
 
   useEffect(() => {

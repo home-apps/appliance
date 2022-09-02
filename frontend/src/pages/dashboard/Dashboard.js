@@ -67,7 +67,7 @@ const Product = () => {
   const [progressBarValue, setProgressBarValue] = useState(40)
   const [showPopup, setShowPopup] = useState(false)
   const [selectedPopupValue, setSelectedPopupValue] = useState(0)
-  const [showAssistant, setShowAssistant] = useState(true)
+  const [showAssistant, setShowAssistant] = useState(false)
   const [selectedAssistantValue, setSelectedAssistantValue] = useState(0)
 
   const [draggableWidth, setDraggableWidth] = useState(0)
